@@ -1,0 +1,39 @@
+<!--<nav id="button"class="navbar navbar-expand-md surface-200 mb-4">
+    <div class="container">
+        <img src="assets/image/téléchargement.png" alt="ang" width="150px">
+     
+   
+        <form class="btns d-flex">
+          <button *ngIf="!isAuth" class="btn-menu animated fadeInUp scrollto" [routerLink]="['/sign_in']" type="submit">Login</button>
+          <button *ngIf="!isAuth" class="btn-menu animated fadeInUp scrollto"  [routerLink]="['/sign_up']" type="submit">Registre</button>
+          <button *ngIf="isAuth" class="btn-menu animated fadeInUp scrollto"  [routerLink]="['/']" type="submit" (click)="onSignOut()">Déconnection</button>
+
+        </form>
+      
+    </div>
+  </nav> -->
+
+
+
+
+  
+<div id="navbar" class="d-flex align-items-center flex" >
+  <div class="container d-flex justify-content-center justify-content-md-between flex ">
+<!-- =======   ======= -->
+<header id="header1" class="fixed-top d-flex align-items-center flex">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between flex ">
+
+    <img src="assets/image/nn.png" alt="ang" width="150px" height="50">
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar order-last order-lg-0  ">
+      <div id ="button"class="container">
+      <form class="btns d-flex">
+        <button *ngIf="!isAuth" class="btn-menu animated fadeInUp scrollto" [routerLink]="['/sign_in']" type="submit">Login</button>
+        <button *ngIf="!isAuth" class="btn-menu animated fadeInUp scrollto"  [routerLink]="['/sign_up']" type="submit">Registre</button>
+        <button *ngIf="isAuth" class="btn-menu animated fadeInUp scrollto"  [routerLink]="['/']" type="submit" (click)="onSignOut()">Déconnection</button>
+
+      </form>
+    </div>
+    </nav><!-- .navbar -->

@@ -1,0 +1,58 @@
+<!--<nav class="bg-cyan-500  navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">go to?</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="text-xl nav-link " href="#" [routerLink]="['/sign_in']">SignIn</a>
+        </li>
+        <li class="text-xl nav-item">
+          <a class="nav-link " href="#" [routerLink]="['/sign_up']">SignUp</a>
+        </li>
+      </ul> 
+    </div>
+    </div>
+  </nav>-->
+  <app-navbar></app-navbar>
+
+<div class="container flex align-items-center justify-content-center">
+    <div class="surface-100 surface-card p-4 shadow-2 border-round w-full lg:w-6">
+        <div class="text-center mb-5">
+            <img src="assets/image/login.gif" alt="Image" height="150" class="mb-3">
+            <div class="text-900 text-3xl font-italic mb-3" >Content de te revoir</div>
+            <span class="text-600 font-medium line-height-3">Vous avez un compte?</span>
+            <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">entrer votre Email !</a>
+        </div>
+
+        <form [formGroup]="MyForm"   (ngSubmit)="save()">
+            <div>  
+            
+            <label for="email" class="block text-900 font-medium mb-2 font-italic"><a class="pi pi-amazon"style="font-size: 1.5rem"></a>  Email</label>
+            <input  id="email" type="text" pInputText icon="pi pi-user" class="  shadow-2 surface-300 border-1 border-blue-100 w-full mb-3 border-round"   formControlName="email">
+            </div>
+        <div *ngIf="email.touched && email.invalid">
+            <small class="text-danger" *ngIf="email.errors.required">Email required</small>
+            <small class="text-danger"  *ngIf="email.errors.email">Email invalide</small>
+        </div>
+        <div>
+            <label for="password" class="block text-900 font-medium mb-2 font-italic"><a class="pi pi-key"style="font-size: 1.5rem"></a> Password</label>
+            <input id="password" type="password" pInputText class=" shadow-2 surface-300 border-1 border-blue-100  w-full mb-3"  formControlName="password">
+        </div>
+        <div *ngIf="password.touched && password.invalid">
+            <small class="text-danger" *ngIf="password.errors.required">Password required</small>
+            <small class="text-danger"  *ngIf="password.errors.minlength">Password invalide</small>
+        </div>
+
+            <div class="flex align-items-center justify-content-between mb-6">
+               
+                <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer" [routerLink]="['/resetpassword']">Forgot your password?</a>
+            </div>
+
+            <button pButton pRipple label="Login" icon="pi pi-user" class="w-full" type="submit"></button>
+        </form>
+    </div>
+</div>
+

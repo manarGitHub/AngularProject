@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="container flex">
+  <div class="row "></div>
+  <div class="col-md-3 mt-5">
+<h1>Ajouter un evenement</h1>
+<button class="btn btn-warning"  [routerLink]="['/add']">Ajouter</button>
+</div>
+<div class="col-md-10 mt-5">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Evenement</th>
+      <th scope="col">Type</th>
+      <th scope="col">Date</th>
+      <th scope="col">Description</th>
+      <th scope="col">Photos</th>
+    
+      <th scope="col">#</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item1 of  listuser ">
+      <td>{{ item1.firstname}}</td>
+      <td>{{ item1.type}}</td>
+      <td>{{ item1.date}}</td>
+      <td>{{ item1.description}}</td>
+      <td>
+        <img src={{item1.url}}  width="80" 
+        height="80" alt='image'></td>
+     
+      <td>
+          
+      <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="edit(item1.$key)"></button>
+      <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="openDialog(item1.$key)" ></button>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+</div>
+</div>

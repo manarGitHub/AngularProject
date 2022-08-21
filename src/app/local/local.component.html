@@ -1,0 +1,31 @@
+<div id="map"></div>
+<div class="row">
+    <div class="col-md-6 offset-md-3"></div>
+    <div class="col-sm-12 text-center"></div>
+    <h5>Météos</h5>
+    <h2>Météos dans {{weather.name}}, {{ weather.sys.country}}</h2>
+</div>
+<table class="table table-light tablestriped table-bordered table-sm">
+    <tbody>
+        <tr>
+            <td>Humiditée</td>
+            <td>{{ weather.main.humidity}}%</td>
+        </tr>
+        <tr>
+            <td>Pression</td>
+            <td>{{weather.main.pressure}}hpa</td>
+        </tr>
+        <tr>
+            <td>Lever du soleil</td>
+            <td>{{weather.sys.sunrise * 1000 | date:'H:mm'}}hpa</td>
+        </tr>
+        <tr>
+            <td>Le coucher du soleil</td>
+            <td>{{weather.sys.sunset * 1000 | date:'H:mm'}}hpa</td>
+        </tr>
+        <tr>
+            <td>Le coucher du soleil</td>
+            <td>{{weather.sys.sunset * 1000 | date:'H:mm'}}hpa</td>
+        </tr>
+    </tbody>
+</table>

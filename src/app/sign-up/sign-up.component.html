@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="cpntainer flex align-items-center justify-content-center">
+    <div class="surface-100 surface-card p-6 shadow-2 border-round w-full lg:w-6">
+        <div class="text-center mb-5">
+            <img src="assets/image/registre.png" alt="Image" height="150" class="mb-3">
+            <div class="text-900 text-3xl font-italic mb-3">Content de te revoir</div>
+            <span class="text-600 font-medium line-height-3">Vous n'avez pas un compte?</span>
+            <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Le créer Maintenant !</a>
+        </div>
+
+        <form [formGroup]="MyForm"   (ngSubmit)="save()">
+          <div>
+
+                <div>
+                <label class="block text-900 font-medium mb-2"> <a class="pi pi-user-edit"style="font-size: 1.5rem"></a>  FirstName</label>
+                <input  class=" shadow-2 surface-300 border-1 border-blue-100 w-full mb-3 border-round" type="text" name="firstname"  formControlName="firstname">
+                </div>
+                
+                <div *ngIf="firstname.touched && firstname.invalid">
+                    <small class="text-danger" *ngIf="firstname.errors.required">Firstname required</small>
+                    <small class="text-danger"  *ngIf="firstname.errors.pattern">Firstname invalide</small>
+                </div>
+                
+                
+                <div>
+                <label  class="block text-900 font-medium mb-2"><a class="pi pi-users"style="font-size: 1.5rem"></a>  LastName</label>
+                <input  class="  shadow-2 surface-300 border-1 border-blue-100 w-full mb-3 border-round" type="text" name="lastname"  formControlName="lastname">
+                </div>
+                
+                <div *ngIf="lastname.touched && lastname.invalid">
+                    <small class="text-danger" *ngIf="lastname.errors.required">LastName required</small>
+                    <small class="text-danger"  *ngIf="lastname.errors.pattern">LastName invalide</small>
+                </div>
+                
+                
+                <div>
+                <label class="block text-900 font-medium mb-2" > <a class="pi pi-amazon"style="font-size: 1.5rem"></a> Email</label>
+                <input  class=" shadow-2 surface-300 border-1 border-blue-100 w-full mb-3 border-round" type="text" name="email" formControlName="email" >
+                </div>
+                
+                <div *ngIf="email.touched && email.invalid">
+                    <small class="text-danger" *ngIf="email.errors.required">Email required</small>
+                    <small class="text-danger"  *ngIf="email.errors.email">Email invalide</small>
+                </div>
+                
+                <div>
+                  <label for="password" class="block text-900 font-medium mb-2 font-italic"><a class="pi pi-key"style="font-size: 1.5rem"></a> Password</label>
+                  <input id="password" type="password" pInputText class=" shadow-2 surface-300 border-1 border-blue-100  w-full mb-3"  formControlName="password">
+                </div>
+                <div *ngIf="password.touched && password.invalid">
+                  <small class="text-danger" *ngIf="password.errors.required">Password required</small>
+                  <small class="text-danger"  *ngIf="password.errors.minlength">Password invalide</small>
+                </div>
+
+                <div>
+                 <label  class="block text-900 font-medium mb-2"><a class="pi pi-phone "style="font-size: 1.5rem"></a> Phone</label>
+                 <input  class=" shadow-2 surface-300 border-1 border-blue-100 w-full mb-3 border-round" type="text" name="phone"  formControlName="phone">
+                </div>
+                
+                <div *ngIf="phone.touched && phone.invalid">
+                    <small class="text-danger" *ngIf="phone.errors.required">Phone required</small>
+                    <small class="text-danger"  *ngIf="phone.errors.pattern ">Phone invalide</small>
+                    <small class="text-danger"  *ngIf="phone.errors.minlength">Phone invalide</small>
+                </div> 
+               
+                <input type="submit" class="btn btn-primary" value="registre" [disabled]="MyForm.invalid">
+
+              </div>
+        </form>
+    </div>
+</div>
+

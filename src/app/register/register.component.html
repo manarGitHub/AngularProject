@@ -1,0 +1,55 @@
+
+<div class="container">
+<form  [formGroup]="MyForm"   (ngSubmit)="save()">
+<div >
+<label >FirstName</label>
+<input class="form-control col-3 " type="text" name="firstname"  formControlName="firstname">
+</div>
+
+<div *ngIf="firstname.touched && firstname.invalid">
+    <small class="text-danger" *ngIf="firstname.errors.required">Firstname required</small>
+    <small class="text-danger"  *ngIf="firstname.errors.pattern">Firstname invalide</small>
+</div>
+
+
+<div>
+<label >LastName</label>
+<input class="form-control col-3 " type="text" name="lastname"  formControlName="lastname">
+</div>
+
+<div *ngIf="lastname.touched && lastname.invalid">
+    <small class="text-danger" *ngIf="lastname.errors.required">LastName required</small>
+    <small class="text-danger"  *ngIf="lastname.errors.pattern">LastName invalide</small>
+</div>
+
+
+<div>
+<label >Email</label>
+<input class="form-control col-3" type="text" name="email" formControlName="email" >
+</div>
+
+<div *ngIf="email.touched && email.invalid">
+    <small class="text-danger" *ngIf="email.errors.required">Email required</small>
+    <small class="text-danger"  *ngIf="email.errors.email">Email invalide</small>
+</div>
+
+
+<div>
+<label  >Phone</label>
+<input class="form-control col-3" type="text" name="phone"  formControlName="phone">
+</div>
+
+<div *ngIf="phone.touched && phone.invalid">
+    <small class="text-danger" *ngIf="phone.errors.required">Phone required</small>
+    <small class="text-danger"  *ngIf="phone.errors.pattern ">Phone invalide</small>
+    <small class="text-danger"  *ngIf="phone.errors.minLength(8) ">Phone invalide</small>
+</div>
+
+<br>
+<button class="btn btn-primary" type="submit">Register</button>
+
+
+
+
+</form>
+</div>
